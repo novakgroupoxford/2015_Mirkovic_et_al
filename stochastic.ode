@@ -27,7 +27,7 @@ AurBcla'=max(0,AurBcla+z13-z14)
 ################################################################################
 
 # formation of unattached MT binding sites at the kinetochore of a single chromosome/sister-chromatid
-V1 = kerr*AurBa*(KTtot*Vx - uKT)/Vx
+V1 = kerr*AurBa/(1 + BN2)*(KTtot*Vx - uKT)/Vx
 # formation of unattached MT binding sites at the kinetochore of a single chromosome/sister-chromatid
 V2 = katt*uKT
 
@@ -37,7 +37,7 @@ V3 = (kdiss + kimcc)*(APCtot*VT - APC)
 V4 = kass*APC*MCCfree/VT
 
 # MCC production
-V5 = (kamcc + kamcc_cdk/VT*Cdk1*AurBatot/(1 + Inh)/(Jamcc + AurBatot/(1 + Inh)))*(uKT + uKTla)*(MCCtot*VT - MCCfree - (APCtot*VT - APC))/VT + kdiss*(APCtot*VT - APC)
+V5 = (kamcc + kamcc_cdk/VT*Cdk1*AurBatot/(1 + BN2)/(Jamcc + AurBatot/(1 + BN2)))*(uKT + uKTla)*(MCCtot*VT - MCCfree - (APCtot*VT - APC))/VT + kdiss*(APCtot*VT - APC)
 # MCC inactivation
 V6 = kimcc*MCCfree + kass*APC*MCCfree/VT
 
@@ -52,7 +52,7 @@ V9 = (kloc + kloc_cdk/VT*Cdk1)*(AurBtot*VT - AurBc - AurBcla)*Vx/VT
 V10 = krem*AurBc
 
 # formation of unattached kinetochores of bulk chromosomes/sister-chromatids
-V11 = kerr*AurBala*(KTtot*Vbulk - uKTla)/Vbulk
+V11 = kerr*AurBala/(1 + BN2)*(KTtot*Vbulk - uKTla)/Vbulk
 # formation of attached kinetochores of bulk chromosomes/sister-chromatids
 V12 = katt*uKTla
 
@@ -124,7 +124,7 @@ p Vbulk=9375
 
 p kass=200
 p kdiss=0.01
-p Inh=0
+p BN2=0
 p RO=0
 p kerr=6.66
 p katt=0.5
