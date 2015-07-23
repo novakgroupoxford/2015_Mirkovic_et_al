@@ -97,6 +97,7 @@ aux uKTtot=uKT + uKTla
 aux AurBa=AurBa
 aux AurBctot=AurBc + AurBcla
 aux AurBatot=AurBa + AurBala
+aux MCCformation = V5
 
 ################################################################################
 #                                                                              #
