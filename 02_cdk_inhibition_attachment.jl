@@ -39,7 +39,7 @@ runSimulation!(M, "RO from beginning")
 ################################################################################
 
 
-figure(figsize = [15,6])
+figure(figsize = [6,15])
 ax1 = subplot2grid([2,1], [0,0], 1, 1)
 title("Simulated Attachment Profiles and Rate of MCC-formation in Cohesion-Depletion", fonts["subplt_title"])
 simname = "time"

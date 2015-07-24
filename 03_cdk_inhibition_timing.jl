@@ -45,7 +45,7 @@ end
 
 
 #WT + CDK-Inhibition
-activities = [0:0.1:1]
+activities = [0:0.05:1]
 
 ################################################################################
 #                                                                              #
@@ -53,8 +53,8 @@ activities = [0:0.1:1]
 #                                                                              #
 ################################################################################
 
-tev_timings = cdki(M, activities, "Control")
-wt_timings = cdki(M, activities, "TEV")
+tev_timings = cdki(M, activities, "TEV")
+wt_timings = cdki(M, activities, "Control")
 colch_timings = cdki(M, activities, "Colchicine")
 
 figure(figsize = (8,12))
@@ -65,9 +65,9 @@ ylabel("time (min)", fonts["subplt_axis"])
 plot(activities*100, wt_timings, label = "Control", linewidth = 2)
 plot(activities*100, tev_timings, label = "TEV", linewidth = 2)
 plot(activities[1:length(colch_timings)]*100, colch_timings, label = "Colchicine", linewidth = 2)
-ylim([0,330])
-yticks([0, 50, 100, 150, 200, 250, 300])
-legend(loc = 2)
+ylim([0,66])
+yticks([0, 10, 20, 30, 40, 50, 60])
+#legend(loc = 1)
 # savefig(pwd()*"/plots/timing_10%_absolute.pdf")
 # close()
 
